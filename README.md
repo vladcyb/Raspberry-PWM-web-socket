@@ -1,5 +1,8 @@
 # Raspberry-PWM-web-socket
+
 https://youtu.be/qfnYDYtpPCc
+
+Control LEDs connected to your Raspberry Pi's GPIO from your browser. The device from which you are opening the page must be connected to the same network as your Raspberry. 
 <table>
 <tr><td>
 <img width="300px" src="https://user-images.githubusercontent.com/7864131/39412687-0709485c-4c29-11e8-9794-c423e39389e6.png">
@@ -7,12 +10,17 @@ https://youtu.be/qfnYDYtpPCc
 </td></tr>
 </table>
 
+Preparations
+-
+Connect 3 LEDs to your Raspberry Pi (14, 15 and 18 GPIO pins)
+
 Install
 -------
 ```
 $ git clone git@github.com:vladcyb/Raspberry-PWM-web-socket.git
+$ sudo apt-get install pigpio
 $ cd Raspberry-PWM-web-socket
-$ npm install socket.io
+$ npm install socket.io --save
 $ npm install pigpio
 ```
 Run
