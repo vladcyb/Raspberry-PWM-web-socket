@@ -6,6 +6,14 @@ var GPIOPWM = require("pigpio").Gpio;
 
 http.listen(8080);
 
+const { spawn } = require('child_process');
+const ip = spawn('hostname', ['-I']);
+
+ip.stdout.on('data', (data) => {
+    var data = `${data}`;
+    console.log('Open ' + data.trim() + ':8080 in a browser.');
+});
+
 function handler (req, res) {
 
     fs.readFile(__dirname + "/public/index.html", function(err, data){
@@ -30,7 +38,6 @@ var led3 = new GPIOPWM(18, "out");
 var leds = [led1, led2, led3];
 
 io.on("connection", function (socket){
-
 
     socket.emit("level", level);
     socket.emit("turnedOn", turnedOn);
@@ -64,5 +71,3 @@ process.on("SIGINT", function(){
     });
     process.exit();
 });
-
-console.log("Started");
