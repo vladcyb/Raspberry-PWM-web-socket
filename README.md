@@ -17,15 +17,15 @@ Connect 3 LEDs to your Raspberry Pi (14, 15 and 18 GPIO pins)
 Install
 -------
 ```
-$ git clone git@github.com:vladcyb/Raspberry-PWM-web-socket.git
-$ sudo apt-get install pigpio
-$ cd Raspberry-PWM-web-socket
-$ npm install socket.io --save
-$ npm install pigpio
+git clone git@github.com:vladcyb/Raspberry-PWM-web-socket.git
+sudo apt-get install pigpio
+cd Raspberry-PWM-web-socket
+npm install socket.io --save
+npm install pigpio
 ```
 Run
 ---
 ```
-$ sudo node server
+sudo node server
 ```
 In your browser open a page `your_raspberry_pi_IP:8080`, where your_raspberry_pi_IP is a local IP-address of your Raspberry in the network to which it is connected. You can check it by enter hostname -I in your Raspberry Pi's terminal.
