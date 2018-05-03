@@ -31,11 +31,15 @@ function handler (req, res) {
 var level = 255;
 var turnedOn = false;
 
-var led1 = new GPIOPWM(14, "out");
-var led2 = new GPIOPWM(15, "out");
-var led3 = new GPIOPWM(18, "out");
+var contents = fs.readFileSync('leds.txt', 'utf8');
 
-var leds = [led1, led2, led3];
+var ledsNumbers = contents.toString().split(/(\n*\s+)/).filter( function(e) { return e.trim().length > 0; } );;
+
+var leds = [];
+
+ledsNumbers.forEach((led) => {
+    leds.push(new GPIOPWM(led, "out"));
+});
 
 io.on("connection", function (socket){
 
