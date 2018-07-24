@@ -15,7 +15,6 @@ ip.stdout.on('data', (data) => {
 });
 
 function handler (req, res) {
-
     fs.readFile(__dirname + "/public/index.html", function(err, data){
         if (err){
             res.writeHead(404, {'Content-Type': 'text/html'});
@@ -25,13 +24,12 @@ function handler (req, res) {
         res.write(data);
         return res.end();
     });
-
 }
 
 var level = 255;
 var turnedOn = false;
 
-var contents = fs.readFileSync('leds.txt', 'utf8');
+var contents = fs.readFileSync(__dirname + '/leds.txt', 'utf8');
 
 var ledsNumbers = contents.toString().split(/(\n*\s+)/).filter( function(e) { return e.trim().length > 0; } );;
 
