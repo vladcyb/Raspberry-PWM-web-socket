@@ -15,17 +15,17 @@ Preparations
 - Connect LEDs to your Raspberry Pi
 - In the `leds.txt` enter GPIO numbers that you've connected to the LEDs
 
-Installing
-----------
+Installation
+-
 ```
-git clone git@github.com:vladcyb/Raspberry-PWM-web-socket.git
+git clone https://github.com/vladcyb/Raspberry-PWM-web-socket.git
 sudo apt-get install pigpio
 cd Raspberry-PWM-web-socket
 npm install socket.io --save
 npm install pigpio
 ```
-Runnig
-------
+Running
+-
 ```
 sudo node server
 ```
